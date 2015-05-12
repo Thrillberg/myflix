@@ -10,7 +10,12 @@
 Category.create(name: "TV Comedies")
 Category.create(name: "TV Dramas")
 
-Video.create(title: "Monk", description: "After the unsolved murder of his wife, Adrian Monk develops obsessive-compulsive disorder, which includes his terror of germs and contamination.", small_cover_url: "/tmp/monk.jpg", large_cover_url: "/tmp/monk_large.jpg", category_id: 1)
+Video.create(title: "Monk",
+              description: "After the unsolved murder of his wife, Adrian Monk develops obsessive-compulsive disorder, which includes his terror of germs and contamination.",
+              small_cover_url: "/tmp/monk.jpg",
+              large_cover_url: "/tmp/monk_large.jpg",
+              category_id: 1)
+
 Video.create(title: "Futurama", description: "Accidentally frozen, pizza-deliverer Fry wakes up 1,000 years in the future.", small_cover_url: "/tmp/futurama.jpg", large_cover_url: "/tmp/monk_large.jpg", category_id: 1)
 Video.create(title: "Monk", description: "After the unsolved murder of his wife, Adrian Monk develops obsessive-compulsive disorder, which includes his terror of germs and contamination.", small_cover_url: "/tmp/monk.jpg", large_cover_url: "/tmp/monk_large.jpg", category_id: 1)
 Video.create(title: "Futurama", description: "Accidentally frozen, pizza-deliverer Fry wakes up 1,000 years in the future.", small_cover_url: "/tmp/futurama.jpg", large_cover_url: "/tmp/monk_large.jpg", category_id: 1)

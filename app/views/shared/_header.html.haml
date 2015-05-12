@@ -6,9 +6,11 @@
       %li= link_to "Videos", home_path
       %li= link_to "My Queue"
       %li= link_to "People"
-    = form_tag search_videos_path, class: "span5 for-search", method: "get" do
-      %input.searh-query(name= "search_term" type="text" placeholder="Search for videos here")
-      %button.btn.btn-default(type="submit") Search
+    .col-md-5.navbar-form
+      = form_tag("/videos/search", method: "get") do 
+        .form-group
+          = text_field_tag :video_title, nil, :placeholder => "Search for videos here", class: "form-control"
+          = button_tag "search", class: "btn btn-default"
     #user_links.pull-right
       %ul
         %li.dropdown
@@ -19,4 +21,4 @@
             %li
               %a(href="#") Account
               %a(href="#") Plan and Billing
-              = link_to "Sign Out", sign_out_path, :method => :delete
+              = link_to "Sign Out", sign_out_path, method: :delete

@@ -4,4 +4,4 @@
   %article.row
     - @category.videos.each do |video|
       .video.col-md-2
-        %img(src="#{video.small_cover_url}")
+        = image_tag video.small_cover_url
