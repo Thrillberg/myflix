@@ -1,0 +1,10 @@
+%section.content_clearfix  
+  .video_large_cover.col-sm-7.col-sm-offset-1
+    %img(src="#{@video.large_cover_url}")
+  .video_info.col-sm-3
+    %header
+      %h3= @video.title
+    %p= @video.description
+    .actions
+      %a{:class => "btn btn-primary"} Watch Now
+      %a{:class => "btn btn-default"} + My Queue

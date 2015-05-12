@@ -9,6 +9,8 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'pg'
+gem 'bootstrap_form'
+gem 'bcrypt-ruby'
 
 group :development do
   gem 'thin'
@@ -30,3 +32,6 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :test do
+  gem 'shoulda-matchers'
+end
