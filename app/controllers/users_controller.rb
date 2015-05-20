@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def new
-    redirect_to home_path unless !logged_in?
     @user = User.new
   end
 
@@ -8,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to home_path
+      redirect_to sign_in_path
     else
       render :new
     end
