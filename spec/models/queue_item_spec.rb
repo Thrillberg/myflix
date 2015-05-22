@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe QueueItem do
-  it { should belong_to(:user) }
-  it { should belong_to(:video) }
+  it { should delegate_method(:category).to(:video) }
+  it { should delegate_method(:title).to(:video).with_prefix }
 
   describe "#video_title" do
     it "returns the title of the associated video" do
