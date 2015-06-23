@@ -72,7 +72,6 @@ describe RelationshipsController do
     end
 
     it "does not create a relationship if the current user already follows the leader" do
-      require 'pry'; binding.pry
       alice = Fabricate(:user)
       bob = Fabricate(:user)
       set_current_user(alice)
