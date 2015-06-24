@@ -28,22 +28,22 @@ describe ReviewsController do
       end
       context "with invalid inputs" do
         it "does not create a review" do
-          post :create, review: { rating: 4 }, video_id: video.id
+          set_review
           expect(Review.count).to eq(0)
         end
 
         it "renders the videos/show template" do
-          post :create, review: { rating: 4 }, video_id: video.id
+          set_review
           expect(response).to render_template "videos/show"
         end
 
         it "sets @video" do
-          post :create, review: { rating: 4 }, video_id: video.id
+          set_review
           expect(assigns(:video)).to eq(video)
         end
         it "sets @reviews" do
           review = Fabricate(:review, video: video)
-          post :create, review: { rating: 4 }, video_id: video.id
+          set_review
           expect(assigns(:reviews)).to match_array([review])
         end
       end

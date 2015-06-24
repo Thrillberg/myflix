@@ -2,12 +2,13 @@ require 'spec_helper'
 
 describe Category do
   it { should have_many(:videos) }
+  it { should validate_presence_of(:name) }
 
   describe "#recent_videos" do
   
     it "returns an empty array if the category does not have any videos" do
-    comedies = Category.create(name: "comedies")
-    expect(comedies.recent_videos).to eq([])
+      comedies = Category.create(name: "comedies")
+      expect(comedies.recent_videos).to eq([])
     end
 
     it "returns an array of videos in reverse chronological order" do
