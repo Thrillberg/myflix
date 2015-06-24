@@ -28,4 +28,6 @@ Myflix::Application.configure do
   password:             ENV['Gmail_password'],
   authentication:       'plain',
   enable_starttls_auto: true  }
+
+  ruby ENV['CUSTOM_RUBY_VERSION'] || '2.1.6'
 end
