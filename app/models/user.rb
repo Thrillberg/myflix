@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def follows?(another_user)
-   following_relationships.map(&:leader).include?(another_user) 
+   following_relationships.pluck(:leader_id).include?(another_user.id) 
   end
 
   def can_follow?(another_user)
