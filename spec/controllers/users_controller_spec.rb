@@ -7,7 +7,9 @@ describe UsersController do
       expect(assigns(:user)).to be_instance_of(User)
     end
   end
+
   describe "POST create" do
+
     context "with valid input" do
       before { post :create, user: Fabricate.attributes_for(:user) }
 
@@ -38,6 +40,26 @@ describe UsersController do
         end
       end
     end
+
+    context "email sending" do
+      before { ActionMailer::Base.deliveries.clear }
+      it "sends the email to the user with valid inputs" do
+        post :create, user: { email: "joe@example.com", password: "password", full_name: "Joe Smith" }
+        expect(ActionMailer::Base.deliveries.last.to).to eq(['joe@example.com'])
+      end
+
+      it "sends out email containing the user's name with valid inputs" do
+        post :create, user: { email: "joe@example.com", password: "password", full_name: "Joe Smith" }
+        expect(ActionMailer::Base.deliveries.last.body).to include('Joe Smith')
+      end
+
+      it "does not send out email with invalid inputs" do
+        post :create, user: { email: "joe@example.com" }
+        expect(ActionMailer::Base.deliveries).to be_empty
+      end
+
+    end
+
   end
 
   describe "GET show" do
