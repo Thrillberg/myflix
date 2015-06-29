@@ -3,7 +3,7 @@ module Tokenable
 
   included do
     def generate_token
-    self.token = SecureRandom.urlsafe_base64
+      self.token = SecureRandom.urlsafe_base64
     end
   end
 end
