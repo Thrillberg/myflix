@@ -15,6 +15,8 @@ gem 'fabrication'
 gem 'faker'
 gem 'sidekiq'
 gem 'unicorn'
+gem 'sentry-raven'
+gem 'figaro'
 
 group :development do
   gem 'thin'
