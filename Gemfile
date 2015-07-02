@@ -15,6 +15,9 @@ gem 'fabrication'
 gem 'faker'
 gem 'sidekiq'
 gem 'unicorn'
+gem 'carrierwave'
+gem 'mini_magick'
+
 
 group :development do
   gem 'thin'
@@ -37,6 +40,7 @@ group :test do
   gem 'capybara-email'
 end
 
-group :production do
+group :staging, :production do
   gem 'rails_12factor'
+  gem 'carrierwave-aws'
 end
