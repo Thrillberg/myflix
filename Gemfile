@@ -15,7 +15,6 @@ gem 'fabrication'
 gem 'faker'
 gem 'sidekiq'
 gem 'unicorn'
-gem 'sentry-raven'
 gem 'figaro'
 gem 'carrierwave'
 gem 'carrierwave-aws'
@@ -44,4 +43,5 @@ end
 
 group :staging, :production do
   gem 'rails_12factor'
+  gem 'sentry-raven'
 end

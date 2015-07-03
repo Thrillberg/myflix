@@ -19,7 +19,16 @@ feature 'Admin adds new video' do
     sign_in
 
     visit video_path(Video.first)
+
+    expect_image_to_be_seen
+    expect_video_to_be_seen
+  end
+
+  def expect_image_to_be_seen
     expect(page).to have_selector("img[src='/uploads/monk_large.jpg']")
+  end
+
+  def expect_video_to_be_seen
     expect(page).to have_selector("a[href='http://www.example.com/my_video.mp4']")
   end
 end
