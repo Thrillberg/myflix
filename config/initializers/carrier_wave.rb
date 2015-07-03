@@ -13,6 +13,6 @@ CarrierWave.configure do |config|
     }
   else
     config.storage = :file
-    config.enable_processing = Rails.env.development
+    config.enable_processing = Rails.env.development?
   end
 end
