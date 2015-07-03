@@ -15,9 +15,10 @@ gem 'fabrication'
 gem 'faker'
 gem 'sidekiq'
 gem 'unicorn'
+gem 'figaro'
 gem 'carrierwave'
+gem 'carrierwave-aws'
 gem 'mini_magick'
-
 
 group :development do
   gem 'thin'
@@ -42,5 +43,5 @@ end
 
 group :staging, :production do
   gem 'rails_12factor'
-  gem 'carrierwave-aws'
+  gem 'sentry-raven'
 end

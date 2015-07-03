@@ -29,8 +29,10 @@ Myflix::Application.routes.draw do
   resources :categories
   resources :queue_items, only: [:create, :destroy]
   post 'update_queue', to: 'queue_items#update_queue'
+  
   resources :users, only: [:create, :show]
   get 'people', to: 'relationships#index'
+  
   resources :relationships, only: [:create, :destroy]
 
   get 'forgot_password', to: 'forgot_passwords#new'
