@@ -13,7 +13,7 @@ deployment:
   staging:
     branch: staging
     commands:
-      - heroku maintenance:on --app thrillberg-myflix
-      - git push git@heroku.com:thrillberg-myflix.git $CIRCLE_SHA1:refs/heads/master
-      - heroku run rake db:migrate --app thrillberg-myflix
-      - heroku maintenance:off --app thrillberg-myflix
+      - heroku maintenance:on --app thrillberg-myflix-staging
+      - git push git@heroku.com:thrillberg-myflix-staging.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app thrillberg-myflix-staging
+      - heroku maintenance:off --app thrillberg-myflix-staging
