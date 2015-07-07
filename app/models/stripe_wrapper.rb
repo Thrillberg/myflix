@@ -23,7 +23,7 @@ module StripeWrapper
     end
 
     def successful?
-      @response.present?
+      response.present?
     end
   end
 end
