@@ -19,6 +19,7 @@ def sign_in(user = nil)
 end
 
 def sign_out
+  find('a.dropdown-toggle').click
   click_link "Sign Out"
 end
 
