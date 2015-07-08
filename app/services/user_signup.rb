@@ -18,17 +18,15 @@ class UserSignup
         handle_invitation(invitation_token)
         AppMailer.send_welcome_email(@user).deliver
         @status = :success
-        self
       else
         @status = :failed
         @error_message = charge.error_message
-        self
       end
     else
       @status = :failed
       @error_message = "Invalid user information. Please check the errors below."
-      self
     end
+    self
   end
 
   def successful?

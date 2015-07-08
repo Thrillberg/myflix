@@ -13,8 +13,9 @@ class UsersController < ApplicationController
       flash[:success] = "Thank you for registering with MyFlix."
       session[:user_id] = @user.id
       redirect_to sign_in_path
-    else flash[:error] = result.error_message
-      render :new
+    else
+      flash.now[:error] = result.error_message
+      render action: "new"
     end
   end
 
