@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/tokens
     body:
       encoding: US-ASCII
-      string: card[number]=400000000002&card[exp_month]=7&card[exp_year]=2018&card[cvc]=314
+      string: card[number]=4000000000000002&card[exp_month]=7&card[exp_year]=2018&card[cvc]=314
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -19,10 +19,10 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.22.0","lang":"ruby","lang_version":"2.1.6 p336 (2015-04-13)","platform":"x86_64-darwin14.0","engine":"ruby","publisher":"stripe","uname":"Darwin
-        Erics-MacBook-Air.local 14.0.0 Darwin Kernel Version 14.0.0: Fri Sep 19 00:26:44
-        PDT 2014; root:xnu-2782.1.97~2/RELEASE_X86_64 x86_64","hostname":"Erics-MacBook-Air.local"}'
+        Erics-Air 14.0.0 Darwin Kernel Version 14.0.0: Fri Sep 19 00:26:44 PDT 2014;
+        root:xnu-2782.1.97~2/RELEASE_X86_64 x86_64","hostname":"Erics-Air"}'
       Content-Length:
-      - '77'
+      - '81'
   response:
     status:
       code: 200
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 06 Jul 2015 20:10:02 GMT
+      - Sat, 11 Jul 2015 21:58:12 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '779'
+      - '780'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_6YnVxS10QQ8L6y
+      - req_6ahN2WHHIUtWK3
       Stripe-Version:
       - '2015-06-15'
       Strict-Transport-Security:
@@ -58,21 +58,21 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_16LfugKpQyEhIGsipjk671y7",
+          "id": "tok_16NVz6KpQyEhIGsiDIpczeHQ",
           "livemode": false,
-          "created": 1436213402,
+          "created": 1436651892,
           "used": false,
           "object": "token",
           "type": "card",
           "card": {
-            "id": "card_16LfugKpQyEhIGsiuh78UCy9",
+            "id": "card_16NVz6KpQyEhIGsicolfrZOC",
             "object": "card",
             "last4": "0002",
             "brand": "Visa",
             "funding": "credit",
             "exp_month": 7,
             "exp_year": 2018,
-            "fingerprint": "OXMhH3gTHyxXHj6I",
+            "fingerprint": "dfldyKV7oSHMXeNG",
             "country": "US",
             "name": null,
             "address_line1": null,
@@ -88,16 +88,16 @@ http_interactions:
             "dynamic_last4": null,
             "metadata": {}
           },
-          "client_ip": "192.54.222.4"
+          "client_ip": "32.212.31.128"
         }
     http_version: 
-  recorded_at: Mon, 06 Jul 2015 20:10:36 GMT
+  recorded_at: Sat, 11 Jul 2015 21:59:08 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&card=tok_16LfugKpQyEhIGsipjk671y7&description=an%20invalid%20charge
+      string: amount=999&currency=usd&card=tok_16NVz6KpQyEhIGsiDIpczeHQ&description=an%20invalid%20charge
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -111,8 +111,8 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.22.0","lang":"ruby","lang_version":"2.1.6 p336 (2015-04-13)","platform":"x86_64-darwin14.0","engine":"ruby","publisher":"stripe","uname":"Darwin
-        Erics-MacBook-Air.local 14.0.0 Darwin Kernel Version 14.0.0: Fri Sep 19 00:26:44
-        PDT 2014; root:xnu-2782.1.97~2/RELEASE_X86_64 x86_64","hostname":"Erics-MacBook-Air.local"}'
+        Erics-Air 14.0.0 Darwin Kernel Version 14.0.0: Fri Sep 19 00:26:44 PDT 2014;
+        root:xnu-2782.1.97~2/RELEASE_X86_64 x86_64","hostname":"Erics-Air"}'
       Content-Length:
       - '91'
   response:
@@ -123,11 +123,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 06 Jul 2015 20:10:03 GMT
+      - Sat, 11 Jul 2015 21:58:12 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '291'
+      - '162'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -141,7 +141,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_6YnVynznxkdjTu
+      - req_6ahNwF6cCtPG36
       Stripe-Version:
       - '2015-06-15'
     body:
@@ -149,12 +149,12 @@ http_interactions:
       string: |
         {
           "error": {
-            "message": "Your card was declined. Your request was in test mode, but used a non test card. For a list of valid test cards, visit: https://stripe.com/docs/testing.",
+            "message": "Your card was declined.",
             "type": "card_error",
             "code": "card_declined",
-            "charge": "ch_16LfugKpQyEhIGsixAR4Y6tZ"
+            "charge": "ch_16NVz6KpQyEhIGsifZG2TFlX"
           }
         }
     http_version: 
-  recorded_at: Mon, 06 Jul 2015 20:10:38 GMT
+  recorded_at: Sat, 11 Jul 2015 21:59:09 GMT
 recorded_with: VCR 2.9.3
